@@ -1,0 +1,253 @@
+/* =========================================================
+   HEALTHCARE — PREMIUM LIVING HEART LOGO
+   ========================================================= */
+
+.healthcare-logo-mark {
+  position: relative;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+
+  width: 42px;
+  height: 42px;
+
+  flex-shrink: 0;
+
+  transition:
+    transform 0.35s cubic-bezier(0.22, 1, 0.36, 1),
+    filter 0.35s ease;
+}
+
+
+/* =========================================================
+   SVG
+   ========================================================= */
+
+.healthcare-logo-svg {
+  width: 100%;
+  height: 100%;
+
+  display: block;
+
+  overflow: visible;
+}
+
+
+/* =========================================================
+   HEART
+   ========================================================= */
+
+.logo-heart {
+  fill: none;
+
+  stroke: #143530;
+  stroke-width: 2.5;
+
+  stroke-linecap: round;
+  stroke-linejoin: round;
+
+  transform-origin: center;
+}
+
+
+/* =========================================================
+   HEARTBEAT
+   ========================================================= */
+
+.logo-heartbeat {
+  fill: none;
+
+  stroke: #143530;
+  stroke-width: 1.7;
+
+  stroke-linecap: round;
+  stroke-linejoin: round;
+
+  opacity: 0;
+
+  stroke-dasharray: 30;
+  stroke-dashoffset: 30;
+}
+
+
+/* =========================================================
+   ACCENT CIRCLES
+   ========================================================= */
+
+.logo-peach-circle {
+  transform-origin: center;
+
+  transition:
+    transform 0.4s ease,
+    opacity 0.4s ease;
+}
+
+.logo-teal-circle {
+  transform-origin: center;
+
+  transition:
+    transform 0.4s ease,
+    opacity 0.4s ease;
+}
+
+
+/* =========================================================
+   LIVING HEART ANIMATION
+   ========================================================= */
+
+.healthcare-logo-animated .logo-heart {
+  animation: healthcare-heart-breathe 3.2s ease-in-out infinite;
+}
+
+
+@keyframes healthcare-heart-breathe {
+
+  0%,
+  100% {
+    transform: scale(1);
+  }
+
+  45% {
+    transform: scale(1.025);
+  }
+
+  52% {
+    transform: scale(1);
+  }
+
+  58% {
+    transform: scale(1.035);
+  }
+
+  65% {
+    transform: scale(1);
+  }
+}
+
+
+/* =========================================================
+   HEARTBEAT LINE ANIMATION
+   ========================================================= */
+
+.healthcare-logo-animated .logo-heartbeat {
+  animation: healthcare-heartbeat 3.2s ease-in-out infinite;
+}
+
+
+@keyframes healthcare-heartbeat {
+
+  0% {
+    opacity: 0;
+    stroke-dashoffset: 30;
+  }
+
+  25% {
+    opacity: 0;
+    stroke-dashoffset: 30;
+  }
+
+  35% {
+    opacity: 0.9;
+    stroke-dashoffset: 30;
+  }
+
+  55% {
+    opacity: 0;
+    stroke-dashoffset: 0;
+  }
+
+  100% {
+    opacity: 0;
+    stroke-dashoffset: 0;
+  }
+}
+
+
+/* =========================================================
+   PEACH DOT
+   ========================================================= */
+
+.healthcare-logo-animated .logo-peach-circle {
+  animation: healthcare-peach-pulse 3.2s ease-in-out infinite;
+}
+
+
+@keyframes healthcare-peach-pulse {
+
+  0%,
+  100% {
+    transform: scale(1);
+    opacity: 1;
+  }
+
+  50% {
+    transform: scale(1.08);
+    opacity: 0.9;
+  }
+}
+
+
+/* =========================================================
+   TEAL DOT
+   ========================================================= */
+
+.healthcare-logo-animated .logo-teal-circle {
+  animation: healthcare-teal-pulse 3.2s ease-in-out infinite;
+}
+
+
+@keyframes healthcare-teal-pulse {
+
+  0%,
+  100% {
+    transform: scale(1);
+    opacity: 1;
+  }
+
+  50% {
+    transform: scale(1.06);
+    opacity: 0.85;
+  }
+}
+
+
+/* =========================================================
+   HOVER
+   ========================================================= */
+
+.healthcare-logo-mark:hover {
+  transform: translateY(-1px) scale(1.04);
+
+  filter:
+    drop-shadow(0 5px 10px rgba(20, 53, 48, 0.10));
+}
+
+
+.healthcare-logo-mark:hover .logo-peach-circle {
+  transform: scale(1.12);
+}
+
+
+.healthcare-logo-mark:hover .logo-teal-circle {
+  transform: scale(1.1);
+}
+
+
+/* =========================================================
+   REDUCED MOTION
+   Accessibility
+   ========================================================= */
+
+@media (prefers-reduced-motion: reduce) {
+
+  .healthcare-logo-animated .logo-heart,
+  .healthcare-logo-animated .logo-heartbeat,
+  .healthcare-logo-animated .logo-peach-circle,
+  .healthcare-logo-animated .logo-teal-circle {
+    animation: none;
+  }
+
+  .healthcare-logo-mark {
+    transition: none;
+  }
+}
